@@ -1,0 +1,247 @@
+
+MaxConnect-4 game
+
+Game state before move:
+ -----------------
+ | 0 0 0 0 0 0 0 | 
+ | 0 0 0 0 0 0 0 | 
+ | 0 0 0 0 0 0 0 | 
+ | 0 0 0 0 0 0 0 | 
+ | 0 0 0 0 0 0 0 | 
+ | 0 0 0 0 0 0 0 | 
+ -----------------
+Score: Player 1 = 0, Player 2 = 0
+
+Game state after move: column 4
+ -----------------
+ | 0 0 0 0 0 0 0 | 
+ | 0 0 0 0 0 0 0 | 
+ | 0 0 0 0 0 0 0 | 
+ | 0 0 0 0 0 0 0 | 
+ | 0 0 0 0 0 0 0 | 
+ | 0 0 0 1 0 0 0 | 
+ -----------------
+Score: Player 1 = 0, Player 2 = 0
+
+         5818024 function calls (4604997 primitive calls) in 1.744 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 MaxConnect4Game.py:124(__init__)
+        3    0.000    0.000    0.000    0.000 MaxConnect4Game.py:137(checkPieceCount)
+        4    0.000    0.000    0.000    0.000 MaxConnect4Game.py:138(<genexpr>)
+        1    0.000    0.000    0.000    0.000 MaxConnect4Game.py:14(maxConnect4Game)
+        2    0.000    0.000    0.000    0.000 MaxConnect4Game.py:144(printGameBoard)
+        1    0.000    0.000    0.000    0.000 MaxConnect4Game.py:15(GameStateNode)
+        1    0.000    0.000    0.000    0.000 MaxConnect4Game.py:154(printGameBoardToFile)
+       48    0.000    0.000    0.000    0.000 MaxConnect4Game.py:156(<genexpr>)
+    19608    0.013    0.000    0.020    0.000 MaxConnect4Game.py:159(constructState)
+   2801/1    0.048    0.000    1.645    1.645 MaxConnect4Game.py:166(populate_state_tree)
+    19608    0.011    0.000    0.011    0.000 MaxConnect4Game.py:18(__init__)
+    196/1    0.002    0.000    0.088    0.088 MaxConnect4Game.py:193(minimax)
+       82    0.000    0.000    0.000    0.000 MaxConnect4Game.py:24(has_children)
+        1    0.000    0.000    1.734    1.734 MaxConnect4Game.py:249(aiPlay)
+        2    0.000    0.000    0.000    0.000 MaxConnect4Game.py:274(countScore)
+      114    0.012    0.000    0.050    0.000 MaxConnect4Game.py:33(value)
+        1    0.001    0.001    0.004    0.004 MaxConnect4Game.py:7(<module>)
+        1    0.000    0.000    0.000    0.000 UserDict.py:4(__init__)
+        1    0.000    0.000    0.000    0.000 __future__.py:48(<module>)
+        1    0.000    0.000    0.000    0.000 __future__.py:74(_Feature)
+        7    0.000    0.000    0.000    0.000 __future__.py:75(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:1000(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:1097(Logger)
+        1    0.000    0.000    0.000    0.000 __init__.py:1112(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:1124(setLevel)
+     1426    0.002    0.000    0.068    0.000 __init__.py:1130(debug)
+     1426    0.004    0.000    0.006    0.000 __init__.py:1218(findCaller)
+     1426    0.002    0.000    0.020    0.000 __init__.py:1239(makeRecord)
+     1426    0.002    0.000    0.065    0.000 __init__.py:1252(_log)
+     1426    0.002    0.000    0.037    0.000 __init__.py:1273(handle)
+        1    0.000    0.000    0.000    0.000 __init__.py:1283(addHandler)
+     1426    0.002    0.000    0.035    0.000 __init__.py:1305(callHandlers)
+     1426    0.000    0.000    0.000    0.000 __init__.py:1331(getEffectiveLevel)
+     1426    0.001    0.000    0.001    0.000 __init__.py:1345(isEnabledFor)
+        1    0.000    0.000    0.000    0.000 __init__.py:1372(RootLogger)
+        1    0.000    0.000    0.000    0.000 __init__.py:1378(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:1386(LoggerAdapter)
+        1    0.000    0.000    0.000    0.000 __init__.py:1492(basicConfig)
+     1426    0.001    0.000    0.001    0.000 __init__.py:153(getLevelName)
+     1426    0.002    0.000    0.070    0.000 __init__.py:1616(debug)
+        1    0.000    0.000    0.000    0.000 __init__.py:1674(NullHandler)
+        3    0.000    0.000    0.000    0.000 __init__.py:182(_checkLevel)
+        3    0.000    0.000    0.000    0.000 __init__.py:210(_acquireLock)
+        3    0.000    0.000    0.000    0.000 __init__.py:219(_releaseLock)
+        1    0.000    0.000    0.000    0.000 __init__.py:230(LogRecord)
+        1    0.001    0.001    0.002    0.002 __init__.py:24(<module>)
+     1426    0.010    0.000    0.018    0.000 __init__.py:242(__init__)
+     1426    0.001    0.000    0.001    0.000 __init__.py:311(getMessage)
+        1    0.000    0.000    0.000    0.000 __init__.py:346(Formatter)
+        2    0.000    0.000    0.000    0.000 __init__.py:390(__init__)
+     1426    0.001    0.000    0.001    0.000 __init__.py:445(usesTime)
+     1426    0.003    0.000    0.005    0.000 __init__.py:451(format)
+        1    0.000    0.000    0.000    0.000 __init__.py:494(BufferingFormatter)
+        1    0.000    0.000    0.000    0.000 __init__.py:536(Filter)
+        1    0.000    0.000    0.000    0.000 __init__.py:573(Filterer)
+        2    0.000    0.000    0.000    0.000 __init__.py:578(__init__)
+     2852    0.001    0.000    0.001    0.000 __init__.py:598(filter)
+        1    0.000    0.000    0.000    0.000 __init__.py:636(_addHandlerRef)
+        1    0.000    0.000    0.000    0.000 __init__.py:646(Handler)
+        1    0.000    0.000    0.000    0.000 __init__.py:655(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:684(createLock)
+     2852    0.002    0.000    0.006    0.000 __init__.py:693(acquire)
+     2852    0.002    0.000    0.006    0.000 __init__.py:700(release)
+     1426    0.001    0.000    0.006    0.000 __init__.py:713(format)
+     1426    0.002    0.000    0.033    0.000 __init__.py:736(handle)
+        1    0.000    0.000    0.000    0.000 __init__.py:754(setFormatter)
+     1426    0.001    0.000    0.001    0.000 __init__.py:81(<lambda>)
+        1    0.000    0.000    0.000    0.000 __init__.py:810(StreamHandler)
+        1    0.000    0.000    0.000    0.000 __init__.py:817(__init__)
+     1426    0.002    0.000    0.012    0.000 __init__.py:828(flush)
+     1426    0.003    0.000    0.022    0.000 __init__.py:839(emit)
+        1    0.000    0.000    0.000    0.000 __init__.py:881(FileHandler)
+        1    0.000    0.000    0.000    0.000 __init__.py:885(__init__)
+        1    0.000    0.000    0.000    0.000 __init__.py:922(_open)
+     1426    0.002    0.000    0.024    0.000 __init__.py:933(emit)
+        1    0.000    0.000    0.000    0.000 __init__.py:948(PlaceHolder)
+        1    0.000    0.000    0.000    0.000 __init__.py:995(Manager)
+        1    0.000    0.000    0.000    0.000 atexit.py:37(register)
+        1    0.000    0.000    0.000    0.000 atexit.py:6(<module>)
+        1    0.000    0.000    0.000    0.000 collections.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 collections.py:26(OrderedDict)
+        1    0.000    0.000    0.000    0.000 collections.py:387(Counter)
+1097992/22408    0.610    0.000    1.566    0.000 copy.py:145(deepcopy)
+    67152    0.007    0.000    0.007    0.000 copy.py:198(_deepcopy_atomic)
+156856/22408    0.441    0.000    1.513    0.000 copy.py:226(_deepcopy_list)
+   224008    0.188    0.000    0.221    0.000 copy.py:267(_keep_alive)
+     1426    0.002    0.000    0.002    0.000 genericpath.py:85(_splitext)
+        1    0.000    0.000    0.001    0.001 hashlib.py:55(<module>)
+        6    0.000    0.000    0.000    0.000 hashlib.py:94(__get_openssl_constructor)
+        1    0.000    0.000    0.000    0.000 heapq.py:31(<module>)
+        1    0.000    0.000    0.000    0.000 keyword.py:11(<module>)
+        1    0.000    0.000    0.000    0.000 maxconnect4.py:12(checkGameStatus)
+        1    0.000    0.000    1.734    1.734 maxconnect4.py:130(main)
+        1    0.000    0.000    1.734    1.734 maxconnect4.py:31(oneMoveGame)
+        1    0.006    0.006    1.744    1.744 maxconnect4.py:9(<module>)
+     1426    0.001    0.000    0.003    0.000 posixpath.py:104(splitext)
+     1426    0.001    0.000    0.001    0.000 posixpath.py:119(basename)
+        1    0.000    0.000    0.000    0.000 posixpath.py:336(normpath)
+        1    0.000    0.000    0.000    0.000 posixpath.py:365(abspath)
+     2853    0.000    0.000    0.000    0.000 posixpath.py:51(normcase)
+        1    0.000    0.000    0.000    0.000 posixpath.py:59(isabs)
+        1    0.000    0.000    0.000    0.000 posixpath.py:68(join)
+        1    0.000    0.000    0.000    0.000 random.py:100(seed)
+        1    0.000    0.000    0.001    0.001 random.py:40(<module>)
+        1    0.000    0.000    0.000    0.000 random.py:650(WichmannHill)
+        1    0.000    0.000    0.000    0.000 random.py:72(Random)
+        1    0.000    0.000    0.000    0.000 random.py:800(SystemRandom)
+        1    0.000    0.000    0.000    0.000 random.py:91(__init__)
+        2    0.000    0.000    0.000    0.000 re.py:188(compile)
+        2    0.000    0.000    0.000    0.000 re.py:226(_compile)
+        2    0.000    0.000    0.000    0.000 sre_compile.py:32(_compile)
+        2    0.000    0.000    0.000    0.000 sre_compile.py:359(_compile_info)
+        4    0.000    0.000    0.000    0.000 sre_compile.py:472(isstring)
+        2    0.000    0.000    0.000    0.000 sre_compile.py:478(_code)
+        2    0.000    0.000    0.000    0.000 sre_compile.py:493(compile)
+       22    0.000    0.000    0.000    0.000 sre_parse.py:138(append)
+        2    0.000    0.000    0.000    0.000 sre_parse.py:140(getwidth)
+        2    0.000    0.000    0.000    0.000 sre_parse.py:178(__init__)
+       28    0.000    0.000    0.000    0.000 sre_parse.py:182(__next)
+        2    0.000    0.000    0.000    0.000 sre_parse.py:195(match)
+       26    0.000    0.000    0.000    0.000 sre_parse.py:201(get)
+        2    0.000    0.000    0.000    0.000 sre_parse.py:301(_parse_sub)
+        2    0.000    0.000    0.000    0.000 sre_parse.py:379(_parse)
+        2    0.000    0.000    0.000    0.000 sre_parse.py:67(__init__)
+        2    0.000    0.000    0.000    0.000 sre_parse.py:675(parse)
+        2    0.000    0.000    0.000    0.000 sre_parse.py:90(__init__)
+        1    0.000    0.000    0.001    0.001 threading.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 threading.py:1058(_Timer)
+        1    0.000    0.000    0.000    0.000 threading.py:1088(_MainThread)
+        1    0.000    0.000    0.000    0.000 threading.py:1090(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:1097(_set_daemon)
+        1    0.000    0.000    0.000    0.000 threading.py:1128(_DummyThread)
+        2    0.000    0.000    0.000    0.000 threading.py:113(RLock)
+     1426    0.001    0.000    0.001    0.000 threading.py:1152(currentThread)
+        1    0.000    0.000    0.000    0.000 threading.py:124(_RLock)
+        2    0.000    0.000    0.000    0.000 threading.py:131(__init__)
+     2855    0.003    0.000    0.005    0.000 threading.py:146(acquire)
+     2855    0.003    0.000    0.004    0.000 threading.py:186(release)
+        2    0.000    0.000    0.000    0.000 threading.py:241(Condition)
+        1    0.000    0.000    0.000    0.000 threading.py:254(_Condition)
+        2    0.000    0.000    0.000    0.000 threading.py:259(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:299(_is_owned)
+        1    0.000    0.000    0.000    0.000 threading.py:372(notify)
+        1    0.000    0.000    0.000    0.000 threading.py:399(notifyAll)
+        1    0.000    0.000    0.000    0.000 threading.py:422(_Semaphore)
+        1    0.000    0.000    0.000    0.000 threading.py:514(_BoundedSemaphore)
+        1    0.000    0.000    0.000    0.000 threading.py:541(Event)
+        1    0.000    0.000    0.000    0.000 threading.py:551(_Event)
+        1    0.000    0.000    0.000    0.000 threading.py:56(_Verbose)
+        1    0.000    0.000    0.000    0.000 threading.py:560(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:575(set)
+        6    0.000    0.000    0.000    0.000 threading.py:58(__init__)
+     5711    0.001    0.000    0.001    0.000 threading.py:63(_note)
+        1    0.000    0.000    0.000    0.000 threading.py:640(Thread)
+        1    0.000    0.000    0.000    0.000 threading.py:656(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:789(_set_ident)
+     1426    0.001    0.000    0.001    0.000 threading.py:967(name)
+        1    0.000    0.000    0.000    0.000 traceback.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 warnings.py:45(filterwarnings)
+        1    0.000    0.000    0.000    0.000 weakref.py:47(__init__)
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_md5}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha1}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha224}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha256}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha384}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha512}
+        2    0.000    0.000    0.000    0.000 {_sre.compile}
+       12    0.000    0.000    0.000    0.000 {_sre.getlower}
+        1    0.000    0.000    0.000    0.000 {binascii.hexlify}
+        1    0.000    0.000    0.000    0.000 {function seed at 0x7f075034ecf8}
+        6    0.000    0.000    0.000    0.000 {getattr}
+        6    0.000    0.000    0.000    0.000 {globals}
+     5707    0.001    0.000    0.001    0.000 {hasattr}
+  1501264    0.078    0.000    0.078    0.000 {id}
+     2867    0.001    0.000    0.001    0.000 {isinstance}
+        1    0.000    0.000    0.000    0.000 {issubclass}
+     1502    0.000    0.000    0.000    0.000 {len}
+        1    0.000    0.000    0.000    0.000 {math.exp}
+        2    0.000    0.000    0.000    0.000 {math.log}
+        1    0.000    0.000    0.000    0.000 {math.sqrt}
+      136    0.000    0.000    0.000    0.000 {max}
+     1429    0.000    0.000    0.000    0.000 {method 'acquire' of 'thread.lock' objects}
+  1277286    0.112    0.000    0.112    0.000 {method 'append' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 {method 'close' of 'file' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+     1426    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
+     1426    0.004    0.000    0.004    0.000 {method 'flush' of 'file' objects}
+     1159    0.002    0.000    0.002    0.000 {method 'format' of 'str' objects}
+  1324859    0.130    0.000    0.130    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        7    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'readlines' of 'file' objects}
+     1428    0.000    0.000    0.000    0.000 {method 'release' of 'thread.lock' objects}
+     4278    0.001    0.000    0.001    0.000 {method 'rfind' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+        1    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+     1433    0.001    0.000    0.001    0.000 {method 'write' of 'file' objects}
+      258    0.000    0.000    0.000    0.000 {min}
+        3    0.000    0.000    0.000    0.000 {open}
+       21    0.000    0.000    0.000    0.000 {ord}
+        1    0.000    0.000    0.000    0.000 {posix.getcwd}
+     1426    0.000    0.000    0.000    0.000 {posix.getpid}
+        1    0.000    0.000    0.000    0.000 {posix.urandom}
+    29386    0.009    0.000    0.009    0.000 {range}
+        3    0.000    0.000    0.000    0.000 {sum}
+     1426    0.000    0.000    0.000    0.000 {sys._getframe}
+        5    0.000    0.000    0.000    0.000 {thread.allocate_lock}
+     8564    0.001    0.000    0.001    0.000 {thread.get_ident}
+     1427    0.000    0.000    0.000    0.000 {time.time}
+     2052    0.001    0.000    0.001    0.000 {zip}
+
+

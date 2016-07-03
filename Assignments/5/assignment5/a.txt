@@ -1,0 +1,9 @@
+# an example comment
+(or (and b (not (iff c (if d  e))) (or c (not e) (if d (not e))) symbol1) symbol2 symbol3)
+
+
+# a second comment
+(and b (not c) (if d (if e (not b))))
+(if b (if d (if e (not b))))
+
+f

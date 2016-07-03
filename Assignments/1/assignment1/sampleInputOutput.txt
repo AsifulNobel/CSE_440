@@ -1,0 +1,70 @@
+Input:
+Bremen Frankfurt
+
+Output:
+distance:  455  km
+route:
+Bremen to Dortmund -> 234 km
+Dortmund to Frankfurt -> 221 km
+
+Input:
+Bremen Munich
+
+Output:
+distance:  839  km
+route:
+Bremen to Hannover -> 132 km
+Hannover to Magdeburg -> 148 km
+Magdeburg to Leipzig -> 125 km
+Leipzig to Nuremberg -> 263 km
+Nuremberg to Munich -> 171 km
+
+Input:
+Munich Luebeck
+
+Output:
+distance:  923  km
+route:
+Munich to Nuremberg -> 171 km
+Nuremberg to Leipzig -> 263 km
+Leipzig to Magdeburg -> 125 km
+Magdeburg to Hannover -> 148 km
+Hannover to Hamburg -> 153 km
+Hamburg to Luebeck -> 63 km
+
+Input:
+London Kassel
+
+Output:
+distance:  inf  km
+route:
+none
+
+Input:
+Leipzig Kassel
+
+Output:
+distance:  438  km
+route:
+Leipzig to Magdeburg -> 125 km
+Magdeburg to Hannover -> 148 km
+Hannover to Kassel -> 165 km
+
+Input:
+Birmingham Magdeburg
+
+Output:
+distance:  inf  km
+route:
+none
+
+Input:
+Stuttgart Hamburg
+
+Output:
+distance:  703  km
+route:
+Stuttgart to Frankfurt -> 200 km
+Frankfurt to Kassel -> 185 km
+Kassel to Hannover -> 165 km
+Hannover to Hamburg -> 153 km

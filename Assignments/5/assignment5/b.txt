@@ -1,0 +1,2 @@
+(not d)
+(if (iff d e) f)
