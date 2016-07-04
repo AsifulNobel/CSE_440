@@ -6,7 +6,6 @@
 #              and assorted functions
 #
 # Created:     09/25/2011
-# Last Edited: 07/22/2013
 # Notes:       *This contains code ported by Christopher Conly from C++ code
 #               provided by Dr. Vassilis Athitsos
 #              *Several integer and string variables are put into lists. This is
@@ -21,6 +20,11 @@
 #               le.symbol, it will need to index it (i.e. le.symbol[0]) so that
 #               the change will persist.
 #              *Written to be Python 2.4 compliant for omega.uta.edu
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+# Last Edited By: Asiful Haque Latif Nobel
+# Last Edited on: 04/07/2016
 #-------------------------------------------------------------------------------
 
 import sys

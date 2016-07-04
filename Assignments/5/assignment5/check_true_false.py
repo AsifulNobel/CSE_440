@@ -6,7 +6,6 @@
 #              base, tests statement, and generates result file.
 #
 # Created:     09/25/2011
-# Last Edited: 07/22/2013
 # Notes:       *Ported by Christopher Conly from C++ code supplied by Dr.
 #               Vassilis Athitsos.
 #              *Several integer and string variables are put into lists. This is
@@ -15,6 +14,11 @@
 #               pass the address of the variables, so I put it in a list, which
 #               is passed by reference.
 #              *Written to be Python 2.4 compliant for omega.uta.edu
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+# Last Edited By: Asiful Haque Latif Nobel
+# Last Edited on: 04/07/2016
 #-------------------------------------------------------------------------------
 
 import sys
