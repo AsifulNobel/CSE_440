@@ -45,7 +45,7 @@ def distribution(examples):
     return examples_distribution
 
 
-def information_gain(examples, attribute, threshold):
+def information_gain(examples, attribute, threshold, class_labels):
     # tec is total number of examples
     # el is total number of examples less than threshold
     # em is total number of examples greater than or equal to threshold
@@ -54,18 +54,35 @@ def information_gain(examples, attribute, threshold):
     el = len([row[attribute] for row in examples if row[attribute] < threshold])
     em = len([row[attribute] for row in examples if row[attribute] >= threshold])
 
-    gain = 0
+    if (el/tec) > 0.0 and (em/tec) > 0.0:
+        gain = (-((el/tec)*logarithm((el/tec), 2))-((em/tec)*logarithm((em/tec), 2)))
+    elif (el/tec) > 0.0:
+        gain = (-((el/tec)*logarithm((el/tec), 2)))
+    elif (em/tec) > 0.0:
+        gain = (-((em/tec)*logarithm((em/tec), 2)))
 
-    if (el/tec) > 0.0:
-        gain -= ((el/tec)*logarithm((el/tec), 2))
+    sum_entropy = 0
+    class_label_index = len(examples[0]) - 1
 
-    if (em/tec) > 0.0:
-        gain -= ((em/tec)*logarithm((em/tec), 2))
+    for label in class_labels:
+        el = len([row[attribute] for row in examples if row[attribute] < threshold and row[class_label_index] == label])
+        em = len([row[attribute] for row in examples if row[attribute] >= threshold and row[class_label_index] == label])
+
+        tec = el + em
+
+        if (el/tec) > 0.0 and (em/tec) > 0.0:
+            sum_entropy += (-((el/tec)*logarithm((el/tec), 2))-((em/tec)*logarithm((em/tec), 2)))
+        elif (el/tec) > 0.0:
+            sum_entropy += (-((el/tec)*logarithm((el/tec), 2)))
+        elif (em/tec) > 0.0:
+            sum_entropy += (-((em/tec)*logarithm((em/tec), 2)))
+
+    gain -= sum_entropy
 
     return gain
 
 
-def choose_attribute(examples, attributes):
+def choose_attribute(examples, attributes, distribution):
     max_gain = -1
     best_attribute = -1
     best_threshold = -1
@@ -77,7 +94,7 @@ def choose_attribute(examples, attributes):
 
         for k in xrange(1, 51):
             threshold = el + k * (em - el) / 51
-            gain = information_gain(examples, attribute, threshold)
+            gain = information_gain(examples, attribute, threshold, distribution.keys())
 
             if gain > max_gain:
                 max_gain = gain
@@ -87,7 +104,7 @@ def choose_attribute(examples, attributes):
     return best_attribute, best_threshold, max_gain
 
 
-def choose_rand_attribute(examples, attributes):
+def choose_rand_attribute(examples, attributes, distribution):
     max_gain = -1
     attribute = -1
     best_threshold = -1
@@ -99,7 +116,7 @@ def choose_rand_attribute(examples, attributes):
 
     for k in xrange(1, 51):
         threshold = el + k * (em - el) / 51
-        gain = information_gain(examples, attribute, threshold)
+        gain = information_gain(examples, attribute, threshold, distribution.keys())
 
         if gain > max_gain:
             max_gain = gain
@@ -113,7 +130,7 @@ def optimized_DTL(examples, attributes, default, pruning_threshold):
         logger.debug("Found a leaf node, default: {}".format(default))
         return default
     else:
-        best_attribute, best_threshold, max_gain = choose_attribute(examples, attributes)
+        best_attribute, best_threshold, max_gain = choose_attribute(examples, attributes, default)
 
         tree = BinaryTree()
         tree.add_root(attribute=best_attribute, threshold=best_threshold, gain=max_gain)
@@ -140,7 +157,7 @@ def randomized_DTL(examples, attributes, default, pruning_threshold):
         logger.debug("Found a leaf node, default: {}".format(default))
         return default
     else:
-        best_attribute, best_threshold, max_gain = choose_rand_attribute(examples, attributes)
+        best_attribute, best_threshold, max_gain = choose_rand_attribute(examples, attributes, default)
 
         tree = BinaryTree()
         tree.add_root(attribute=best_attribute, threshold=best_threshold, gain=max_gain)
