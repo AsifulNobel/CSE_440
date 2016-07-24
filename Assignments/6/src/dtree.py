@@ -46,38 +46,58 @@ def distribution(examples):
 
 
 def information_gain(examples, attribute, threshold, class_labels):
-    # tec is total number of examples
-    # el is total number of examples less than threshold
-    # em is total number of examples greater than or equal to threshold
+    # variable name meaning
+    # exc -> total number of examples
+    # excc -> total number of columns in first example
+    # ex_in_lt -> example indices less than threshold
+    # ex_in_ge -> example indices greater than or equal to threshold
+    # exc_lt -> total number of elements in ex_in_lt
+    # exc_ge -> total number of elements in ex_in_ge
+    # cl_freq_node -> node's class label frequency
+    # cl_freq_l_node -> class label frequency of examples less than threshold
+    # cl_freq_r_node -> class label frequency of examples greater than or equal
+    # ----------------> to threshold
 
-    tec = len(examples) * 1.0
-    el = len([row[attribute] for row in examples if row[attribute] < threshold])
-    em = len([row[attribute] for row in examples if row[attribute] >= threshold])
+    exc = len(examples) * 1.0
+    excc = len(examples[0])
+    ex_in_lt = [index for index, row in enumerate(examples) if row[attribute] < threshold]
+    ex_in_ge = [index for index, row in enumerate(examples) if row[attribute] >= threshold]
+    exc_lt = len(ex_in_lt) * 1.0
+    exc_ge = len(ex_in_ge) * 1.0
 
-    if (el/tec) > 0.0 and (em/tec) > 0.0:
-        gain = (-((el/tec)*logarithm((el/tec), 2))-((em/tec)*logarithm((em/tec), 2)))
-    elif (el/tec) > 0.0:
-        gain = (-((el/tec)*logarithm((el/tec), 2)))
-    elif (em/tec) > 0.0:
-        gain = (-((em/tec)*logarithm((em/tec), 2)))
+    gain = 0
 
-    sum_entropy = 0
-    class_label_index = len(examples[0]) - 1
+    cl_freq_node = {}
+    cl_freq_l_node = {}
+    cl_freq_r_node = {}
 
     for label in class_labels:
-        el = len([row[attribute] for row in examples if row[attribute] < threshold and row[class_label_index] == label])
-        em = len([row[attribute] for row in examples if row[attribute] >= threshold and row[class_label_index] == label])
+        cl_freq_node[label] = 0
+        cl_freq_l_node[label] = 0
+        cl_freq_r_node[label] = 0
 
-        tec = el + em
+    for index, row in enumerate(examples):
+        cl_freq_node[int(row[excc-1])] += 1
 
-        if (el/tec) > 0.0 and (em/tec) > 0.0:
-            sum_entropy += (-((el/tec)*logarithm((el/tec), 2))-((em/tec)*logarithm((em/tec), 2)))
-        elif (el/tec) > 0.0:
-            sum_entropy += (-((el/tec)*logarithm((el/tec), 2)))
-        elif (em/tec) > 0.0:
-            sum_entropy += (-((em/tec)*logarithm((em/tec), 2)))
+        if index in ex_in_lt:
+            cl_freq_l_node[int(row[excc-1])] += 1
 
-    gain -= sum_entropy
+        if index in ex_in_ge:
+            cl_freq_r_node[int(row[excc-1])] += 1
+
+    for key, val in cl_freq_node.iteritems():
+        if val > 0:
+            gain += -((val/exc)*logarithm((val/exc), 2))
+
+    if exc_lt > 0:
+        for key, val in cl_freq_l_node.iteritems():
+            if val > 0:
+                gain -= (exc_lt/exc) * -((val/exc_lt)*logarithm((val/exc_lt), 2))
+
+    if exc_ge > 0:
+        for key, val in cl_freq_r_node.iteritems():
+            if val > 0:
+                gain -= (exc_ge/exc) * -((val/exc_ge)*logarithm((val/exc_ge), 2))
 
     return gain
 
