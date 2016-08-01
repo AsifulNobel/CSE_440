@@ -96,19 +96,18 @@ def main(argv):
     print '\nChecking statement...',
 
     # Run the statement through the inference engine
-    entailment, alpha_truth_values = check_true_false(knowledge_base, alpha)
+    alpha_truth_values = check_true_false(knowledge_base, alpha)
 
     print '\nFinished check.'
     print "\nWriting result to result.txt..."
-    print "Entailment: ", entailment
     print alpha_truth_values
 
     with open('result.txt', 'wb') as output:
-        if entailment and (len(alpha_truth_values) == 0):
+        if (len(alpha_truth_values) == 0):
             output.write("both true and false\n")
-        elif entailment and ((True in alpha_truth_values) and (False in alpha_truth_values)):
+        elif ((True in alpha_truth_values) and (False in alpha_truth_values)):
             output.write("possibly true, possibly false\n")
-        elif entailment and all(alpha_truth_values):
+        elif all(alpha_truth_values):
             output.write("definitely true\n")
         else:
             output.write("definitely false\n")

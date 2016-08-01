@@ -268,7 +268,6 @@ def tt_check_all(KB, alpha, symbols, model):
         model[first_symbol] = False
         false_value = tt_check_all(KB, alpha, symbols_duplicate, model)
 
-        return (true_value and false_value)
 
 def check_true_false(KB, alpha):
     global var_symbols
@@ -279,4 +278,6 @@ def check_true_false(KB, alpha):
 
     symbol_list = list(var_symbols)
 
-    return tt_check_all(KB, alpha, symbol_list, model), alpha_truth_values
+    tt_check_all(KB, alpha, symbol_list, model)
+
+    return alpha_truth_values
